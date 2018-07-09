@@ -10,12 +10,13 @@ Funny part is that this challenge also was prone to such attack, which was unint
 
 The reason is that initially the stacked queries were not allowed (so that you could not make 'waitfor delay' call), but then I added a second stage with the procedure and had to allow stacked queries =)  
 
+Another alternative part of solution used by 0daysober is to declare your own variable with null-byte to exploit stored procedure and overwrite arbitrary files.
+
 # Solution
 Find the following vulnerabilities:
 - SQL injection in auth controller
 - SQL injection leading to aribtrary files creation in sp_logEvent procedure
 - Limited template inclusion in Flask
-
 
 1) Exfiltrate the source code of sp_logEvent procedure. This can be done by randomized algorithm using the following payload (see exp.py):
 ```python

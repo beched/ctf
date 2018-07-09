@@ -20,8 +20,11 @@ To solve this task, teams need to reverse engineer the bytecode, and use the fol
 
 They also need to know how to work with web3, how to find contract bytecode, etc.
 
-You can solve the task a bit differently during the last step (as 0daysober did), you don't necessarily need Unexpected ether attack.
+0daysober solved the task a bit differently during the last step (as 0daysober did), you don't necessarily need Unexpected ether attack.
 You can just craft a proper balance if you play with withdraw() and invest() calls. 
+
+This is possible due to a huge bug leading to an unintended solution: the withdraw() function does not change the balances array.
+But you still need to exploit integer overflow beforehand.
 
 # Deployment information
 
